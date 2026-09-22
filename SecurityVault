@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int secretPin = 1919;
+        int attempts = 3;
+        boolean isAccessGranted = false;
+        while (attempts > 0 && !isAccessGranted) {
+            System.out.println("Введите 4- значный пин код для доступа к сейфу(осталось попыток " + attempts + ")");
+            int inputPin = scan.nextInt();
+            if (inputPin == secretPin) {
+                isAccessGranted = true;
+                System.out.println("ДОСТУП РАЗРЕШЕН");
+            } else {
+                attempts--;
+                System.out.println("НЕВЕРНО ВВЕДЕН КОД");
+            }
+        }
+
+            if (!isAccessGranted){
+                System.out.println("Попытки исчерпаны!!Сейф заблокирован,ГБР уже в пути ");
+            }
+
+    }
+}
