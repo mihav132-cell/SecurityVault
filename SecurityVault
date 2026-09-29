@@ -27,8 +27,5 @@ public class Main {
             if (!isAccessGranted){
                 System.out.println("Попытки исчерпаны!!Сейф заблокирован,ГБР уже в пути ");
             }
-
-
-
     }
 }
