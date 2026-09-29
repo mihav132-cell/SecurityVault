@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +10,11 @@ public class Main {
         while (attempts > 0 && !isAccessGranted) {
             System.out.println("Введите 4- значный пин код для доступа к сейфу(осталось попыток " + attempts + ")");
             int inputPin = scan.nextInt();
+            if (inputPin >9999||inputPin < 1000){
+                System.out.println("Введен неверный формат кода!");
+                System.out.println("Код,должен быть 4- значным.Попытка не защитатна. у вас осталось " + attempts + " Попыток ");
+                continue;
+            }
             if (inputPin == secretPin) {
                 isAccessGranted = true;
                 System.out.println("ДОСТУП РАЗРЕШЕН");
@@ -21,6 +27,8 @@ public class Main {
             if (!isAccessGranted){
                 System.out.println("Попытки исчерпаны!!Сейф заблокирован,ГБР уже в пути ");
             }
+
+
 
     }
 }
